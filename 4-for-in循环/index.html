@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for-in循环</title>
+</head>
+<body>
+    <!-- for...in 语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作） -->
+  <script>
+    // 遍历数组元素
+    let arr = [1, 2, 3]
+    for (item in arr) {
+      console.log('遍历数组', arr[item])
+    }
+    
+    // 遍历对象属性
+    /* 在使用for-in时，返回的是所有能够通过对象访问到的、可枚举的属性，
+      其中包括存在于实例中的属性，也包括存在于原型中的属性
+    */
+    
+    function Person () {
+    }
+    Person.prototype.name = "willian"
+    var person1 = new Person()
+    person1.age = 21
+    for (var prop1 in person1) {
+      console.log(prop1)
+    }
+    
+
+    var o = {
+      // 屏蔽了原型中的不可枚举属性toString,根据规定，所有自定义的属性都是可枚举的
+      toString: function () { 
+        return "My Object"
+      }
+    }
+    console.log(o)
+    for (var prop2 in o) {
+      if (prop2 == "toString") {
+        console.log("Found toString")
+      }
+    }
+  </script>
+</body>
+</html>

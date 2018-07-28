@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise-demo</title>
+</head>
+<body>
+  <script>
+    function fn1() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('步骤一执行')
+          resolve('1')
+        }, 500)
+      })
+    }
+    
+    function fn2() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('步骤二执行')
+          resolve('2')
+        }, 1000)
+      })
+    }
+    function fn3() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('步骤三执行')
+          resolve('3')
+        }, 1500)
+      })
+    }
+
+    fn1()
+    .then((value) => {
+      console.log(value)
+      return fn2()
+    })
+    .then((value) => {
+      console.log(value)
+      return fn3()
+    })
+    console.log('哈哈哈我是同步的')
+  </script>
+</body>
+</html>

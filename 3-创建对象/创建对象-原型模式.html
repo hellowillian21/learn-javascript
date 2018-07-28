@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>创建对象-原型模式</title>
+</head>
+<body>
+  <script>
+    function Person(name) {
+      this.name = name
+    }
+    // 共享一个sayName函数
+    Person.prototype.sayName = function () {
+      alert(this.name)
+    }
+    var person1 = new Person('xiaoming')
+    var person2 = new Person('xiaohong')
+    person2.sayName = function() {
+      alert('我是小红，我来自实例')
+    }
+    person1.sayName()
+    person2.sayName()
+    console.log(person1)
+    // 如果[[prototype]]指向调用isPrototypeOf()方法的对象Person.prototype,那么这个方法就返回true
+    console.log(Person.prototype.isPrototypeOf(person1))
+    //返回[[prototype]]的值
+    console.log(Object.getPrototypeOf(person1)) 
+    // 检测一个属性是存在于实例中，还是存在于原型中
+    console.log(person2.hasOwnProperty("sayName")) 
+    // in 操作符会在通过对象能够访问给定属性时返回true,无论该属性存在于实例中还是原型中
+    console.log("in操作符","sayName" in person1)
+    // 因此可以用这样一个函数判断一个属性到底是存在于实例对象中，还是存在于原型中
+    function hasPrototypeProperty (object, name) {
+      return !object.hasOwnProperty(name) && (name in object)
+    }
+    
+  </script>
+</body>
+</html>
