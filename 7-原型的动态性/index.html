@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型的动态性</title>
+</head>
+<body>
+  <script>
+    function Person () {
+
+    }
+    // 这里先有实例再在原型对象上添加方法
+    // 可见松散的连接关系 之间的连接不过是指针
+    var friend = new Person ()
+    // Person.prototype.sayHi = function () {
+    //   console.log('hi')
+    // }
+    
+    // 重写原型对象 
+    Person.prototype = {
+      sayHi: function () {
+        console.log('hi') // 报错 (先有实例再重写)
+      }
+    }
+    // 重写原型对象切断了现有原型与任何之前已经存在的对象实例之间的联系
+    // 它们引用的还是最初的原型
+    friend.sayHi() 
+  </script>
+</body>
+</html>
