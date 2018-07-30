@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组合使用构造函数模式和原型模式</title>
+</head>
+<body>
+  <script>
+    function Person (nama, age, job) {
+      this.name = name
+      this.age = age
+      this.job = job
+      this.friends = ['aa', 'bb']
+    }
+    Person.prototype = {
+      constructor:Person,
+      sayName: function () {
+        alert(this.name)
+      }
+    }
+    var person1 = new Person('willian', 21, 'front-end')
+    var person2 = new Person('messi', 30, 'player')
+
+    person1.friends.push('cc')
+    console.log(person1.friends)
+    console.log(person2.friends)
+    console.log(person1.friends === person2.friends)
+    console.log(person1.sayName === person2.sayName)
+  </script>
+</body>
+</html>
