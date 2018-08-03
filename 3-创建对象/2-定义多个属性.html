@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定义多个属性</title>
+</head>
+<body>
+  <script>
+  // Object.definProperties()方法
+  var book = {}
+  Object.defineProperties(book, {
+    // 数据属性的 writable 为 true 时，
+    // 该属性才能被赋值运算符改变。默认为 false。
+    _year: {
+      value: 2004,
+      writable: true
+    },
+    edition: {
+      value: 1,
+      writable: true 
+    },
+    year: {
+      get: function () {
+        return this._year
+      },
+      set: function (newValue) {
+        if (newValue > 2004) {
+          console.log(newValue)
+          this._year = newValue
+          console.log(this._year)
+          this.edition += newValue - 2004
+        }
+      }
+    }
+  })
+  book.year = 2005
+  console.log(book._year, book.edition)
+  </script>
+</body>
+</html>
