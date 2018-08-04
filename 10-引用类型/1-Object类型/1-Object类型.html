@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Object类型</title>
+</head>
+<body>
+  <script>
+    // 通过new一个Object构造函数
+    var person1 = new Object()
+    person1.name = 'willian'
+    person1.age = 21
+    // 通过对象字面量
+    var person2 = {
+      name: 'willian',
+      age: 21
+    }
+    // 两种访问对象属性的方法 注意区分
+    console.log(person2.name)
+    console.log(person2['name'])
+  </script>
+</body>
+</html>

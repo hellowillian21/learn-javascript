@@ -1,2 +1,2 @@
 ## learn-javascript
-> 一些`javascript`的知识
+> 学习javascript知识,不分先后顺序
