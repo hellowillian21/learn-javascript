@@ -8,8 +8,21 @@
 </head>
 <body>
   <script>
+    /* 总结
+    1、定义一个空函数
+    2、让空函数的原型等于超类型的原型，
+      即指向同一个，也就是说拥有超类型的原型对象副本
+    3、然后new F()，重写new F()实例的constructor指向字子类型
+      并重写子类型的原型对象为 new F()
+    */
+    function object (o) {
+      function F () {}
+      F.prototype = o 
+      return new F()
+    }
     function inheritPrototype (subType, superType) {
-      var prototype = Object(superType.prototype) // 创建对象
+      var prototype = object(superType.prototype) // 创建对象
+      console.log(prototype)
       prototype.constructor = subType // 增强对象
       subType.prototype = prototype // 指定对象
     }
@@ -28,6 +41,8 @@
     SubType.prototype.sayName = function () {
       console.log(this.age)
     }
+    var person = new SubType('willian', 21)
+    console.log(person)
   </script>
 </body>
 </html>
