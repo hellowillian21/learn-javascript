@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>位操作符</title>
+</head>
+<body>
+  <script>
+    // 按位非
+    // 按位非的本质：操作数的负值减1
+    var num1 = 25
+    var num2 = ~num1
+    console.log(num2) // -26
+    
+    // 按位与
+    // 对相同位置上的两个数执行AND操作
+    var result1 = 25 & 3
+    console.log(result1) // 1
+
+    // 按位或
+    // 有一个位是1的情况就返回1，只有两个位都是0才返回0
+    var result2 = 25 | 3
+    console.log(result2)
+
+    // 按位异或
+    // 只有一个位是1的情况返回1，有两个1或者有0返回0
+    var result3 = 25 ^ 3
+    console.log(result3)
+
+    //左移
+    var oldValue = 2
+    var newValue = oldValue << 5
+    console.log('左移',newValue)
+
+    // 有符号的右移
+    var oldValue2 = 64
+    var newValue2 = oldValue2 >> 5
+    console.log('有符号右移', newValue2)
+
+    // 无符号的右移
+    var oldValue3 = 64
+    var newValue3 = oldValue3 >>> 5
+    console.log('无符号右移', newValue3)
+
+    var oldValue4 = -64
+    var newValue4 = oldValue4 >>> 5
+    console.log('无符号右移', newValue4)
+  </script>
+</body>
+</html>
