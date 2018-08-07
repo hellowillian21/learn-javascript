@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>操作方法</title>
+</head>
+<body>
+  <script>
+    // concat方法
+    var colors = ['red', 'green', 'blue']
+    var colors2 = colors.concat('yellow', ['black', 'brown'])
+    console.log(colors)
+    console.log('新数组',colors2)
+    
+    // slice方法
+    var colors3 = ['red', 'green', 'blue', 'yellow', 'purple']
+    var colors4 = colors3.slice(1)
+    var colors5 = colors3.slice(1,4) // 不包含结束位置项
+    console.log(colors4)
+    console.log(colors5)
+    
+    // splice方法
+    // 会改变原数组
+    
+    // 删除
+    var colors6 = ['red', 'green', 'blue']
+    var removed = colors.splice(0, 1)
+    console.log(colors6) // green, blue
+    console.log(removed) // red
+    
+    // 替换
+    removed = colors.splice(1, 0, 'yellow', 'orange')
+    console.log(colors6)
+    console.log(removed)
+
+    // 插入
+    removed = colors.splice(1, 1, 'red', 'pirple')
+    console.log(colors6)
+    console.log(removed)
+    
+  </script>
+</body>
+</html>
