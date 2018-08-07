@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>归并方法</title>
+</head>
+<body>
+  <script>
+      var values = [1, 2, 3, 4, 5]
+      var sum = values.reduce(function(prev, cur, index, array) {
+        return prev + cur
+      })
+      console.log(sum)
+
+      var sum2 = values.reduceRight(function (prev, cur, index, array) {
+        return prev +cur
+      })
+      console.log(sum2)
+  </script>
+</body>
+</html>
