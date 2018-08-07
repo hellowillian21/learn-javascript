@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>队列方法</title>
+</head>
+<body>
+  <script>
+    var colors = new Array()
+    var count = colors.push('red', 'green')
+    console.log(count)
+    count = colors.push('black') // 入队
+    console.log(count)
+
+    var item = colors.shift() // 出队
+    console.log(item)
+    console.log(colors.length)
+
+    // 还可以从相反的方向来模拟队列
+    console.log('-------------------------------')
+    var colors2 = new Array()
+    var count2 = colors2.unshift('red','green') // 推入两项
+    console.log(count2)
+    count2 = colors2.unshift('black') // 入队
+    console.log(count2) // 3
+    var item2 = colors2.pop()
+    console.log(item2) // green
+    console.log(colors2.length) 
+  </script>
+</body>
+</html>
