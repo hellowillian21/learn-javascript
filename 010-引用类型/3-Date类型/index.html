@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Date类型</title>
+</head>
+<body>
+  <script>
+    var now = new Date()
+    console.log(now)
+    var someDate = new Date(Date.parse('May 25, 2004'))
+    var someDate2 = new Date('May 25, 2004') // 会在后台调用Date.parse()
+    console.log(someDate, someDate2)
+    console.log('toLocalString方法   ',now.toLocaleString(),
+    'toString方法',now.toString())
+
+    var y2k = new Date(Date.UTC(2000, 0))
+    var allFives = new Date(Date.UTC(2005, 4, 5, 17, 55, 55))
+    console.log(y2k, allFives)
+
+    // 基于系统设置的本地时区
+    var y2k = new Date(2000, 0)
+    var allFives = new Date(2005, 4, 5, 17, 55, 55)
+    console.log(y2k, allFives)
+
+    // Date.now() 返回调用这个方法时的日期和时间的毫秒数
+    var start = Date.now()
+    // dosomething()
+    setTimeout(function(){
+      var stop = Date.now()
+      var result = stop - start
+      console.log(result)
+      console.log(stop)
+    },3000)
+    
+  </script>
+</body>
+</html>
