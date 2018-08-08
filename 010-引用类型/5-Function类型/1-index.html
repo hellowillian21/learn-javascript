@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 函数名实际上是一个指向函数对象的指针
+    function sum (num1, num2) {
+      return num1 +num2
+    }
+    console.log(sum(10, 10)) // 20
+    var anotherSum = sum 
+    console.log(anotherSum(10, 10)) // 20
+
+    sum = null
+    console.log(anotherSum(10, 10)) //20
+
+    // 没有重载
+    function addSomeNumber (num) {
+      return num + 100
+    }
+    function addSomeNumber (num) {
+      return num + 200
+    }
+    var result = addSomeNumber(100) 
+    console.log(result) // 300
+    //以上代码实际上是函数名指针重新指向另一个函数
+    
+  </script>
+</body>
+</html>
