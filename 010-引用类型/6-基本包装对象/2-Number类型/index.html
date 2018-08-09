@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 按照指定的小数位返回数值的字符串表示
+    var num = 10
+    console.log(num.toFixed(2)) // '10.00'
+
+    var num1 = 10.005
+    console.log(num1.toFixed(2)) // '10.01'
+    
+    // 指数表示法
+    var num2 = 10
+    console.log(num2.toExponential(1)) // '1.0e + 1'
+    
+    // 自动返回一个合适的值
+    var num3 = 99
+    console.log(num3.toPrecision(1)) // '1e+2'
+    console.log(num3.toPrecision(2)) // '99'
+    console.log(num3.toPrecision(3)) // '99.0'
+    
+    var numberObject = new Number(10)
+    console.log(numberObject)
+    var numberValue = 10
+    console.log(typeof numberObject) // 'object'
+    console.log(typeof numberValue) // 'number'
+    console.log(numberObject instanceof Number) // ture
+    console.log(numberValue instanceof Number) //false
+  </script>
+</body>
+</html>

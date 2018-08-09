@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 基本类型与引用类型的布尔值有区别
+    var falseObject = new Boolean(false)  
+    // 布尔表达式中的所有对象都会被转换成为true
+    var result = falseObject && true
+    console.log(result) // true
+    
+    var falseValue = false
+    result = falseValue && true
+    console.log(result) // false
+
+    console.log(typeof falseObject) // object
+    console.log(typeof falseValue) // boolean
+    console.log(falseObject instanceof Boolean) // true
+    console.log(falseValue instanceof Boolean) // false
+  </script>
+</body>
+</html>
