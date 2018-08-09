@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var max = Math.max(3, 54, 32, 16)
+    console.log(max) // 54
+    var min = Math.min(3, 54, 32, 16)
+    console.log(min) // 3
+    // 求出数组中的最大值
+    var values = [1, 2, 3, 4, 5, 6, 7, 8]
+    var maxVal = Math.max.apply(Math, values)
+    console.log(maxVal)
+    
+    // 舍入方法
+
+    // ceil 向上舍入
+    console.log(Math.ceil(25.9)) // 26
+    console.log(Math.ceil(25.5)) // 26
+    console.log(Math.ceil(25.1)) // 26
+    // round 标准舍入
+    console.log(Math.round(25.9)) // 26
+    console.log(Math.round(25.5)) // 26
+    console.log(Math.round(25.1)) // 25
+    // floor 向下舍入
+    console.log(Math.floor(25.9)) // 25
+    console.log(Math.floor(25.5)) // 25
+    console.log(Math.floor(25.1)) // 25
+
+    //random()方法
+    //随机生成一个1-10之间的数
+    var num = Math.floor(Math.random() * 9 + 1)
+    console.log(num)
+  </script>
+</body>
+</html>
