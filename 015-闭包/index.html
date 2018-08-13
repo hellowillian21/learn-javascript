@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>闭包</title>
+</head>
+<body>
+  <script>
+    function createFunctions () {
+      var result = new Array()
+      for (var i = 0; i < 10; i++) {
+        result[i] = function (num) {
+          return function() {
+            return num
+          }
+        }(i)
+      }
+      return result
+    }
+    console.log(createFunctions())
+    
+    // 关于this对象
+    // 匿名函数的执行环境具有全局性，因此其this对象通常指向window
+    var name = 'The Object'
+    var object = {
+      name: 'My Object',
+      getNameFunc: function () {
+        var that = this
+        return function () {
+          return that.name
+        }
+      }
+    }
+    console.log(object.getNameFunc()()) // 'My Obeject'
+    
+    // 改写内存泄露代码
+    function assignHandler () {
+      var element = document.getElementById('somElement')
+      var id = element.id
+
+      element.onclick = function () {
+        console.log(id)
+      }
+      element = null
+    }
+
+    
+  </script>
+</body>
+</html>
