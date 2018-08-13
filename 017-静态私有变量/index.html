@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>静态私有变量</title>
+</head>
+<body>
+  <script>
+    (function () {
+      // 私有变量
+      var name = ''
+      Person = function (value) {
+        name = value
+      }
+      Person.prototype.getName = function () {
+        return name 
+      }
+      Person.prototype.setName = function (value) {
+        name = value
+      }
+    })()
+
+    var person1 = new Person('willian')
+    console.log(person1.getName()) // 'willian'
+    person1.setName('hello')
+    console.log(person1.getName()) // 'hello'
+
+    var person2 = new Person('aa')
+    console.log(person1.getName()) // aa
+    console.log(person2.getName()) // aa
+  </script>
+</body>
+</html>
