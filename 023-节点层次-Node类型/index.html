@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Node类型</title>
+</head>
+<body>
+  <p>hello world</p>
+  <script>
+    if (document.body.nodeType == Node.ELEMENT_NODE) {
+      console.log("Node is an element")
+    }
+
+    if (document.body.nodeType == 1) { // 使用与所有浏览器
+      console.log('Node is an element')
+      console.log(document.body.nodeName) // nodeName的值是元素的标签名
+    }
+    
+    // 节点关系
+
+    //注意：childNode会把回车空格也算进去
+    var firstChild = document.body.childNodes[0]
+    var secondChild = document.body.childNodes[1]
+    var third = document.body.childNodes[2]
+    var fourth = document.body.childNodes[3]
+    var fifth = document.body.childNodes[4]
+    var count = document.body.childNodes.length
+    console.log(firstChild)
+    console.log(secondChild)
+    console.log(third)
+    console.log(fourth)
+    console.log(fifth)
+    console.log(count)
+    // 将NodeList转换为数组
+    function convertToArray(nodes) {
+      var array = null
+      try {
+        array = Array.prototype.slice.call(node, 0)
+      } catch {
+        array = new Array()
+        for (var i = 0, len = nodes.length; i < len; i++) {
+          array.push(nodes[i])
+        }
+      }
+      return array
+    }
+    // 除了childNodes  还有firstChild/lastChild/parentNode/nextSibling/previousSibling
+    
+    
+    //操作节点
+    //appendChild()用于向childNodes列表的末尾添加一个节点
+    var returnNode = someNode.appendChild(newNode)
+    // insertBefore()
+    // replaceChild()
+    // removeChild()
+
+  </script>
+</body>
+</html>
