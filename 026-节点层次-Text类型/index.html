@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Text类型</title>
+</head>
+<body>
+  <div>Hello World</div>
+  <script>
+    let div = document.getElementsByTagName('div')[0]
+    console.log(div.firstChild)
+    div.firstChild.nodeValue = 'some other message'
+    console.log(div.firstChild)
+
+    // 创建文本节点
+    // var textNode = document.createTextNode("<strong>Hello<strong> World")
+    
+    var element = document.createElement('div')
+    element.className = 'message'
+    var textNode = document.createTextNode('Hello world')
+    element.appendChild(textNode)
+    var anotherTextNode = document.createTextNode('Yippee')
+    element.appendChild(anotherTextNode)
+    document.body.appendChild(element)
+
+    console.log(element.childNodes.length)
+    
+    // normalize合并相邻的文本节点
+    element.normalize()
+    console.log(element.childNodes.length)
+    console.log(element.firstChild.nodeValue)
+    
+    // 分割文本节点
+    var newNode = element.firstChild.splitText(5)
+    console.log('----分割文本节点----')
+    console.log(element.firstChild.nodeValue)
+    console.log(newNode.nodeValue)
+    console.log(element.childNodes.length)
+  </script>
+</body>
+</html>
