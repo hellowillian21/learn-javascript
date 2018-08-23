@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Element类型</title>
+</head>
+<body>
+  <div id="myDiv" class="bd" title="Body text" lang="en" dir="ltr"></div> 
+  <script>
+    var div = document.getElementById('myDiv')
+    console.log(div.id)
+    console.log(div.className)
+    console.log(div.title)
+    console.log(div.lang)
+    console.log(div.dir)
+    // 重新赋值
+    div.id = 'someOtherId'
+    console.log(div.id)
+    // 取得特性
+    console.log(div.getAttribute('id'))
+    console.log(div.getAttribute('class'))
+    console.log(div.getAttribute('title'))
+    console.log(div.getAttribute('lang'))
+    console.log(div.getAttribute('dir'))
+    // 设置特性
+    console.log(div.setAttribute('id', 'someOtherId')) 
+    console.log(div.setAttribute('class', 'ft'))
+    console.log(div.setAttribute('title', 'some other text'))
+    console.log(div.setAttribute('lang', 'fr'))
+    console.log(div.setAttribute('dir', 'rtl'))
+    
+    // removeAttribute
+
+    // attributes属性
+    // 取得id特性
+    var id = element.attributes.getNameItem('id').nodeValue
+    var id = element.attributes['id'].nodeValue
+    //设置特性的值
+    element.attributes['id'].nodeValue = 'someOtherId'
+    // 删除特性
+    // removeNameItem和 removeAttribute区别在于removeNameItem返回被删除特性的Attr节点
+    var oldAttr = element.attributes.removeNameItem('id')
+    // 创建元素
+    var div = document.createElement('div')
+    
+  </script>
+</body>
+</html>
