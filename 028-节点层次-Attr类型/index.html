@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Attr类型</title>
+</head>
+<body>
+  <script>
+    var attr = document.createAttribute('align')  
+    attr.value = 'left'
+    element.setAttribute(attr) 
+    console.log(element.attributes['align'.value]) // 'left'
+    console.log(element.getAttributeNode('align').value) // 'left'
+    console.log(element.getAttribute('align')) // 'left'
+  </script>
+</body>
+</html>
